@@ -38,6 +38,7 @@ public class CardTrick {
         System.out.println("Please enter a number between 1-13: ");
         int number = input.nextInt();
         System.out.println("Please enter a suit for your card: ");
+        input.nextLine();
         String suit = input.nextLine();
         // and search magicHand here
         boolean match = false;
