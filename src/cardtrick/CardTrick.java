@@ -21,6 +21,7 @@ public class CardTrick {
     {
         Card[] magicHand = new Card[7];
         
+        
         for (int i=0; i<magicHand.length; i++)
         {
             Card c = new Card();
@@ -28,11 +29,9 @@ public class CardTrick {
            int value = (int)(Math.floor(Math.random()*13)+1);
             c.setValue(value);
             //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
-            int rnd = (int)Math.round(Math.random()*3);
-                      
+            int rnd = (int)Math.round(Math.random()*3);         
             c.setSuit(Card.SUITS[rnd]);
-            
-            System.out.println(magicHand[i].value);
+                               
         }// end of for loop
         
         //insert code to ask the user for Card value and suit, create their card
@@ -42,10 +41,20 @@ public class CardTrick {
         String suit = input.nextLine();
         // and search magicHand here
         boolean match = false;
-        for (int i=0; i<magicHand.length;i++){
-            
+        for(int i=0; i<magicHand.length;i++){
+           
+            if(number == magicHand[i].getValue()){
+                if (suit == magicHand[i].getSuit()){
+                        match = true;
+                }
+            }      
         }
+        
         //Then report the result here
+        if (match == false)
+            System.out.println("The card you picked is not part of the hand");
+        if (match == true)
+            System.out.println("The card you picked is in the magic hand!");
     }//end of main method
     
 }
