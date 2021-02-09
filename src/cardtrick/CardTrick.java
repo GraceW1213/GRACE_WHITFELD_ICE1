@@ -20,7 +20,7 @@ public class CardTrick {
     public static void main(String[] args)
     {
         Card[] magicHand = new Card[7];
-        card[] luckyCard = new Card[1];
+        Card[] luckyCard = new Card[1];
         for(int i=0; i<luckyCard.length; i++){
             Card c = new Card();
             c.setValue(13);
@@ -39,18 +39,13 @@ public class CardTrick {
                                
         }// end of for loop
         
-        //insert code to ask the user for Card value and suit, create their card
-        System.out.println("Please enter a number between 1-13: ");
-        int number = input.nextInt();
-        System.out.println("Please enter a suit for your card: ");
-        input.nextLine();
-        String suit = input.nextLine();
+               
         // and search magicHand here
         boolean match = false;
         for(int i=0; i<magicHand.length;i++){
            
-            if(number == magicHand[i].getValue()){
-                if (suit == magicHand[i].getSuit()){
+            if(luckyCard[1].getValue() == magicHand[i].getValue()){
+                if (luckyCard[1].getSuit() == magicHand[i].getSuit()){
                         match = true;
                 }
             }      
@@ -58,9 +53,9 @@ public class CardTrick {
         
         //Then report the result here
         if (match == false)
-            System.out.println("The card you picked is not part of the hand");
+            System.out.println("You lose, the lucky card was not in the the hand");
         if (match == true)
-            System.out.println("The card you picked is in the magic hand!");
+            System.out.println("You win! The lucky card was in the the hand");
     }//end of main method
     
 }
